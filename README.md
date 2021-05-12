@@ -6,6 +6,7 @@ The script relies on using APIs to fetch slot availability from CoWIN portal and
 All you need is:
 1) Python Wrapper for Cowin API - https://pypi.org/project/CoWIN-API-by-Kunal-Kumar-Sahoo/
 2) A free Twilio Account - https://www.twilio.com/
+
 (This is no rocket science, in case you were looking for an elaborate complex code)
 
 You can edit the script to search multiple dates, search by districts or lat-long etc. More details in the python wrapper link above.

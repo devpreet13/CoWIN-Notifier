@@ -1,5 +1,5 @@
 pip install twilio
-pip install PyCoWIN-Kunal
+pip install CoWIN-API-by-Kunal-Kumar-Sahoo
 
 from twilio.rest import Client
 from cowin_api import CoWinAPI

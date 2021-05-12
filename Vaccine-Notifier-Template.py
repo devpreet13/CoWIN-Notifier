@@ -47,32 +47,34 @@ j = 0
 #added a while loop which keeps checking availability every 60 seconds
 while j < 1:
 
+    try:
+        if np.any([availability(x) for x in date_list]):
+            print('Slot Available')
+            i = 0
+            while i<10: # you will receive 10 messages if any slots are available
+
+                #########################################
+                #### enter details from twilio here #####
+                #########################################
+                account_sid = 'Enter Twilio SID'
+                auth_token = 'Enter Twilio Authorisation Token'
+                client = Client(account_sid, auth_token)
+
+
+
+                message = client.messages \
+                                .create(
+                                    body="Vaccine Slot Available.",
+                                    from_='+123', # Enter Twilio Phone Number
+                                    to='+123' # Enter Your Phone Number
+                                )
+                i += 1
+                j = 1
+                print(message.sid)
+
+        else:
+            print('Slot Unavailable')
     
-    if np.any([availability(x) for x in date_list]):
-        print('Slot Available')
-        i = 0
-        while i<10: # you will receive 10 messages if any slots are available
-            
-            #########################################
-            #### enter details from twilio here #####
-            #########################################
-            account_sid = 'Enter Twilio SID'
-            auth_token = 'Enter Twilio Authorisation Token'
-            client = Client(account_sid, auth_token)
-            
-
-
-            message = client.messages \
-                            .create(
-                                body="Vaccine Slot Available.",
-                                from_='+123', # Enter Twilio Phone Number
-                                to='+123' # Enter Your Phone Number
-                            )
-            i += 1
-            j = 1
-            print(message.sid)
-
-    else:
-        print('Slot Unavailable')
-
+    except:
+        print('Possible Internet connectivity issue. If internet is fine, check the tutorial pdf document on github and make sure all steps are implemented')
     time.sleep(60)

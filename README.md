@@ -8,6 +8,8 @@ All you need is:
 2) A free Twilio Account - https://www.twilio.com/
 
 (This is no rocket science, in case you were looking for an elaborate complex code)
+You can refer the tutorial pdf: https://github.com/devpreet13/CoWIN-Notifier/blob/main/Tutorial%20to%20Deploy%20your%20CoWIN-Notifier.pdf
+for step by step implementation in windows using anaconda distribution.
 
 You can edit the script to search multiple dates, search by districts or lat-long etc. More details in the python wrapper link above.
 

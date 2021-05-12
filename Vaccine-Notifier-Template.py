@@ -4,6 +4,7 @@ import time
 
 j = 0
 
+#added a while loop which keeps checking availability every 60 seconds
 while j < 1:
 
     pin_code = "100001"

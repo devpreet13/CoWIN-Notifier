@@ -13,11 +13,16 @@ cowin = CoWinAPI()
 
 
 
+#########################################
+#### Edit this as per requirement  ######
+#########################################
 
 pin_code = "110001" # Enter the area pincode
-min_age_limit = 45  # Optional. By default returns centers without filtering by min_age_limit
+min_age_limit = 45  # Optional. By default returns centers without filtering by min_age_limit. Enter 18 or 45
 start_date = datetime.date(2021, 5, 12) #enter date in yyyy,m,d format (without preceding 0)
 number_of_days = 5 # range of days you want to check for availability
+
+#########################################
 
 # creating range of dates
 date_list = []
@@ -47,9 +52,15 @@ while j < 1:
         print('Slot Available')
         i = 0
         while i<10: # you will receive 10 messages if any slots are available
+            
+            #########################################
+            #### enter details from twilio here #####
+            #########################################
             account_sid = 'Enter Twilio SID'
             auth_token = 'Enter Twilio Authorisation Token'
             client = Client(account_sid, auth_token)
+            
+
 
             message = client.messages \
                             .create(
